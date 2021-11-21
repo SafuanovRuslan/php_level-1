@@ -1,6 +1,19 @@
+<?php 
+// В имеющемся шаблоне сайта заменить статичное меню (ul – li) на генерируемое через PHP. 
+// Необходимо представить пункты меню как элементы массива и вывести их циклом. 
+// Подумать, как можно реализовать меню с вложенными подменю? Попробовать его реализовать.
+?>
+
+
 <?php
 	$title = "Free CSS Templates";
 	$h1 = "PHP learning start";
+    $menu = [
+        "home",
+        "archive",
+        "contact",
+        "about us",
+    ]
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -14,11 +27,11 @@
 <body>
 	<div id="content">
 		<h1><?= $h1?></h1>
-		
-		<ul id="menu">
-			<li><a href="#">home</a></li>
-			<li><a href="#">archive</a></li>
-			<li><a href="#">contact</a></li>
+
+        <ul id="menu">
+        <?php foreach ($menu as $menuItem):?>
+			<li><a href="#"><?= $menuItem?></a></li>
+        <?php endforeach?>
 		</ul>
 	
 		<div class="post">
